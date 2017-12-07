@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// process.env has all the ENV
+const port = process.env.PORT || 3000;
+
 let app = express();
 
 hbs.registerPartials(__dirname + '/views/partials'); // all handle bars partial files
@@ -63,6 +66,6 @@ app.get('/bad', (req, res) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log('server up on port 3000');
+app.listen(port, () => {
+  console.log(`server up on port ${port}`);
 });
