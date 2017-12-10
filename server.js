@@ -49,6 +49,11 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('/project', (req, res) => {
+  res.render('projectHome.hbs', {
+    message: 'Project Home',
+  });
+});
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
